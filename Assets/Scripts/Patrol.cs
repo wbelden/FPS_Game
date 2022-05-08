@@ -45,7 +45,7 @@
         }
 
 
-        private float eyesOnPlayerTimer = 0;
+        public float eyesOnPlayerTimer = 0;
         void Update () {
             if(fov.canSeePlayer == true){
                 distance = Vector3.Distance(this.transform.position, fov.player.position);
