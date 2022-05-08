@@ -53,7 +53,7 @@ public class Gun : MonoBehaviour
     void Fire() {
         if(!onCooldown) {
             Rigidbody bullet = Instantiate(bulletPrefab, bulSpawn.position, bulSpawn.rotation);
-            bullet.AddRelativeForce(Vector3.forward * 50, ForceMode.Impulse);
+            bullet.AddRelativeForce(Vector3.forward * 30, ForceMode.Impulse);
             StartCoroutine(Cooldown());
         }
     }
