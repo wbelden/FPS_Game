@@ -36,17 +36,27 @@ public class Gun : MonoBehaviour
     //     damage = (int)Random.Range(damageRange.x, damageRange.y);
     //     rateOfFire = Random.Range(rateOfFireRange.x, rateOfFireRange.y);
     // }
+    public int mag = 10;
+    public int ammo = 30;
 
     // Update is called once per frame
     void Update()
     {
-            
+        
         var mouse = Mouse.current;
-        if(mouse == null) return; 
+        var keyboard = Keyboard.current;
+
+        if(mouse == null && keyboard == null) return;
 
         if(mouse.leftButton.isPressed) {
             Fire();
         }
+
+
+        if(keyboard.rKey.wasPressedThisFrame) {
+            Reload();
+        }
+        
     }
 
 
@@ -56,6 +66,11 @@ public class Gun : MonoBehaviour
             bullet.AddRelativeForce(Vector3.forward * 30, ForceMode.Impulse);
             StartCoroutine(Cooldown());
         }
+    }
+
+    void Reload() {
+        mag = 10;
+        ammo -= 10;
     }
 
     IEnumerator Cooldown() {
