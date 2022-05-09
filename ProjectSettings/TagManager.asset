@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - Environment
   - Melee
+  - Ammo Pickup
   layers:
   - Default
   - TransparentFX
