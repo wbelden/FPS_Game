@@ -53,7 +53,7 @@
                 Debug.Log("reactionTime * distance: " + (reactionTime * distance / reactionFactor));
                 if(eyesOnPlayerTimer > reactionTime * distance / reactionFactor){
                     searchingForPlayer = true;
-                    agent.destination = fov.player.position;
+                    agent.destination = fov.player.position; 
                 }
             } else {
                 // reset the eyesOnPlayerTimer if we lose sight of the player

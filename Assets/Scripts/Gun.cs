@@ -18,6 +18,10 @@ public class Gun : MonoBehaviour
     public Transform bulSpawn;
     public bool onCooldown;
 
+    public int magSize = 10;
+    public int mag = 10;
+    public int ammo = 30;
+
     // [Header("Randomization")]
     // public List<string> names;
     // public Vector2 damageRange;
@@ -36,8 +40,7 @@ public class Gun : MonoBehaviour
     //     damage = (int)Random.Range(damageRange.x, damageRange.y);
     //     rateOfFire = Random.Range(rateOfFireRange.x, rateOfFireRange.y);
     // }
-    public int mag = 10;
-    public int ammo = 30;
+
 
     // Update is called once per frame
     void Update()
@@ -62,15 +65,36 @@ public class Gun : MonoBehaviour
 
     void Fire() {
         if(!onCooldown) {
-            Rigidbody bullet = Instantiate(bulletPrefab, bulSpawn.position, bulSpawn.rotation);
-            bullet.AddRelativeForce(Vector3.forward * 30, ForceMode.Impulse);
-            StartCoroutine(Cooldown());
+            if (mag > 0) {
+                    mag -= 1;
+                    Rigidbody bullet = Instantiate(bulletPrefab, bulSpawn.position, bulSpawn.rotation);
+                    bullet.transform.Translate(0,0,1);
+                    bullet.AddRelativeForce(Vector3.forward * 30, ForceMode.Impulse);
+
+                    StartCoroutine(Cooldown());
+            }
         }
     }
 
     void Reload() {
-        mag = 10;
-        ammo -= 10;
+        if (mag == magSize) {
+            Debug.Log("mag is already full.");
+            return;
+        }
+
+        if(ammo + mag >= magSize) {
+            ammo -= magSize - mag;
+            mag = magSize;
+        } else if (ammo > 0) { 
+            mag = ammo + mag;
+            ammo = 0;
+        } else {
+            Debug.Log("No ammo to reload!");
+        }
+    }
+
+    public void GetAmmo() {
+        ammo += 30;
     }
 
     IEnumerator Cooldown() {
