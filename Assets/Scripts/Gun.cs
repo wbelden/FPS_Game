@@ -7,12 +7,12 @@ using UnityEngine.InputSystem;
 public class Gun : MonoBehaviour
 {
 
-    // public enum elements {Fire, Ice, Earth, Wind};
-    // public elements elType = elements.Fire;
+    public enum elements {Fire, Ice, Earth, Wind};
+    public elements elType = elements.Fire;
 
-    // public string gunName = "Gun";
-    // public int damage = 2;
-    // public float rateOfFire = 0.5f;
+    public string gunName = "Gun";
+    public int damage = 2;
+    public float rateOfFire = 0.5f;
 
     public Rigidbody bulletPrefab;
     public Transform bulSpawn;
@@ -22,24 +22,24 @@ public class Gun : MonoBehaviour
     public int mag = 10;
     public int ammo = 30;
 
-    // [Header("Randomization")]
-    // public List<string> names;
-    // public Vector2 damageRange;
-    // public Vector2 rateOfFireRange;
+    [Header("Randomization")]
+    public List<string> names;
+    public Vector2 damageRange;
+    public Vector2 rateOfFireRange;
 
-    // private TextMeshPro nameText;
+    public TextMeshPro nameText;
 
 
     void Start() {
-        // nameText = transform.GetChild(1).GetComponent<TextMeshPro>();
+        //nameText = transform.GetChild(1).GetComponent<TextMeshPro>();
     }
 
-    // public void Randomize() {
-    //     name = names[(int)elType];
-    //     nameText.text = name;
-    //     damage = (int)Random.Range(damageRange.x, damageRange.y);
-    //     rateOfFire = Random.Range(rateOfFireRange.x, rateOfFireRange.y);
-    // }
+    public void Randomize() {
+        name = names[(int)Random.Range(0, 2)];
+        nameText.text = name;
+        damage = (int)Random.Range(damageRange.x, damageRange.y);
+        rateOfFire = Random.Range(rateOfFireRange.x, rateOfFireRange.y);
+    }
 
 
     // Update is called once per frame

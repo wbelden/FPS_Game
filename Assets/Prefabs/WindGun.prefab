@@ -43,9 +43,9 @@ GameObject:
   - component: {fileID: 1024592436392386419}
   - component: {fileID: 1024592436392386416}
   - component: {fileID: 1024592436392386444}
-  - component: {fileID: 6547211354324625588}
+  - component: {fileID: 4852265837684078032}
   m_Layer: 0
-  m_Name: IceGun
+  m_Name: WindGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 1.4}
   m_Children:
   - {fileID: 1024592436166913436}
-  - {fileID: 2865448149759586750}
+  - {fileID: 6248260780073782703}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -94,7 +94,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fc606fd96076bbc44a2a1c593cb1f2cd, type: 2}
+  - {fileID: 2100000, guid: 8e50bfe7b66b11242bd49ae9bafa5c83, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -141,24 +141,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff1f9e618f35e545aeb34029912d3d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elType: 1
+  elType: 3
   gunName: Gun
   damage: 2
   rateOfFire: 0.5
   bulletPrefab: {fileID: -9048613604850683944, guid: 1ca12b4cf3323774189025f84b2c237d, type: 3}
   bulSpawn: {fileID: 1024592436166913436}
   onCooldown: 0
-  magSize: 12
+  magSize: 15
   mag: 10
-  ammo: 36
+  ammo: 45
   names:
-  - Cold
-  - Ice
-  - Chill
-  damageRange: {x: 3, y: 6}
-  rateOfFireRange: {x: 0.4, y: 0.7}
-  nameText: {fileID: 6736144935409235889}
---- !u!54 &6547211354324625588
+  - Tornado
+  - Breeze
+  - Air
+  damageRange: {x: 2, y: 5}
+  rateOfFireRange: {x: 0.6, y: 1}
+  nameText: {fileID: 1123212113221691359}
+--- !u!54 &4852265837684078032
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,7 +174,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &4154915860717436474
+--- !u!1 &4844556652490877446
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,9 +182,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2865448149759586750}
-  - component: {fileID: 6930649321030806983}
-  - component: {fileID: 6736144935409235889}
+  - component: {fileID: 6248260780073782703}
+  - component: {fileID: 4466352809486604500}
+  - component: {fileID: 1123212113221691359}
   m_Layer: 0
   m_Name: NameText
   m_TagString: Untagged
@@ -192,13 +192,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &2865448149759586750
+--- !u!224 &6248260780073782703
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4154915860717436474}
+  m_GameObject: {fileID: 4844556652490877446}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.10000001, y: 1, z: 0.7142999}
@@ -211,13 +211,13 @@ RectTransform:
   m_AnchoredPosition: {x: -0.51, y: 0.000000059604645}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!23 &6930649321030806983
+--- !u!23 &4466352809486604500
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4154915860717436474}
+  m_GameObject: {fileID: 4844556652490877446}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -252,13 +252,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6736144935409235889
+--- !u!114 &1123212113221691359
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4154915860717436474}
+  m_GameObject: {fileID: 4844556652490877446}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ice Gun
+  m_text: Wind Gun
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -339,7 +339,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 6930649321030806983}
+  m_renderer: {fileID: 4466352809486604500}
   m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
