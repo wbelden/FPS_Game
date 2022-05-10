@@ -7,6 +7,7 @@ public class SpawnedEnemy : MonoBehaviour
 {
     public GameObject player;
     private NavMeshAgent agent;
+    private Vector3 distance;
     
     void Start() {
         agent = GetComponent<NavMeshAgent>();
