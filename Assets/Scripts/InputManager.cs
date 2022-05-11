@@ -12,6 +12,7 @@ public class InputManager : MonoBehaviour
         if(keyboard.digit7Key.wasPressedThisFrame) {
             Application.LoadLevel(0);
         }
+        
         if(keyboard.digit8Key.wasPressedThisFrame) {
             if(Time.timeScale == 1) {
                 Time.timeScale = 0;

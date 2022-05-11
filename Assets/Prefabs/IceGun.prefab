@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 6547211354324625588}
   m_Layer: 0
   m_Name: IceGun
-  m_TagString: Untagged
+  m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   - Ice
   - Chill
   damageRange: {x: 3, y: 6}
-  rateOfFireRange: {x: 0.4, y: 0.7}
+  rateOfFireRange: {x: 0.4, y: 0.6}
   nameText: {fileID: 6736144935409235889}
 --- !u!54 &6547211354324625588
 Rigidbody:

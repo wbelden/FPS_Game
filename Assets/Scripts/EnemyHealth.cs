@@ -5,11 +5,13 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int health = 10;
+    int damage = 2;
 
     void OnCollisionEnter(Collision other) {
         if(other.gameObject.CompareTag("Bullet")){
             Destroy(other.gameObject);
-            health -= 2;
+            damage = other.gameObject.GetComponent<bullet>().damage;
+            health -= damage;
 
             if(health <= 0){
                 Destroy(this.gameObject);

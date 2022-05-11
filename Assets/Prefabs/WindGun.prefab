@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 4852265837684078032}
   m_Layer: 0
   m_Name: WindGun
-  m_TagString: Untagged
+  m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   - Breeze
   - Air
   damageRange: {x: 2, y: 5}
-  rateOfFireRange: {x: 0.6, y: 1}
+  rateOfFireRange: {x: 0.1, y: 0.3}
   nameText: {fileID: 1123212113221691359}
 --- !u!54 &4852265837684078032
 Rigidbody:

@@ -29,9 +29,10 @@ public class Gun : MonoBehaviour
 
     public TextMeshPro nameText;
 
+    private Rigidbody rb;
 
     void Start() {
-        //nameText = transform.GetChild(1).GetComponent<TextMeshPro>();
+        rb = this.GetComponent<Rigidbody>();
     }
 
     public void Randomize() {
@@ -41,33 +42,12 @@ public class Gun : MonoBehaviour
         rateOfFire = Random.Range(rateOfFireRange.x, rateOfFireRange.y);
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-        var mouse = Mouse.current;
-        var keyboard = Keyboard.current;
-
-        if(mouse == null && keyboard == null) return;
-
-        if(mouse.leftButton.isPressed) {
-            Fire();
-        }
-
-
-        if(keyboard.rKey.wasPressedThisFrame) {
-            Reload();
-        }
-        
-    }
-
-
-    void Fire() {
+    public void Fire() {
         if(!onCooldown) {
             if (mag > 0) {
                     mag -= 1;
                     Rigidbody bullet = Instantiate(bulletPrefab, bulSpawn.position, bulSpawn.rotation);
+                    bullet.GetComponent<bullet>().damage = this.damage;
                     bullet.transform.Translate(0,0,1);
                     bullet.AddRelativeForce(Vector3.forward * 30, ForceMode.Impulse);
 
@@ -76,7 +56,7 @@ public class Gun : MonoBehaviour
         }
     }
 
-    void Reload() {
+    public void Reload() {
         if (mag == magSize) {
             Debug.Log("mag is already full.");
             return;
@@ -99,7 +79,21 @@ public class Gun : MonoBehaviour
 
     IEnumerator Cooldown() {
         onCooldown = true;
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(rateOfFire);
         onCooldown = false;
+    }
+
+    public void Pickup(Transform hand) {
+        this.transform.SetParent(hand);
+        rb.isKinematic = true;
+        this.transform.position = hand.position;
+        this.transform.rotation = hand.rotation;
+    }
+
+    public void Drop() {
+        this.transform.SetParent(null);
+        this.transform.Translate(Vector3.forward*2);
+        rb.isKinematic = false;
+        rb.AddRelativeForce(Vector3.forward * 5, ForceMode.Impulse);
     }
 }

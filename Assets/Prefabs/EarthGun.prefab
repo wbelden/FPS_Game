@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: -1610777785562405379}
   m_Layer: 0
   m_Name: EarthGun
-  m_TagString: Untagged
+  m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   - Rock
   - Quake
   damageRange: {x: 6, y: 10}
-  rateOfFireRange: {x: 0.05, y: 0.1}
+  rateOfFireRange: {x: 0.6, y: 1}
   nameText: {fileID: 4290832914623979646}
 --- !u!54 &-1610777785562405379
 Rigidbody:
