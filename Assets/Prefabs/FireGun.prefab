@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 3343505953456892508}
   m_Layer: 0
   m_Name: FireGun
-  m_TagString: Untagged
+  m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   - Torch
   - Lava
   damageRange: {x: 4, y: 8}
-  rateOfFireRange: {x: 0.2, y: 0.4}
+  rateOfFireRange: {x: 0.5, y: 0.7}
   nameText: {fileID: 6289770509227049935}
 --- !u!54 &3343505953456892508
 Rigidbody:
